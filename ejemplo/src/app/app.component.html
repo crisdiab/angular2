@@ -1,0 +1,47 @@
+<h1>
+  {{title}} - {{objeto.nombre}}
+</h1>
+
+<ul>
+  <li>
+    <a [routerLink]="['/home']">
+      Home
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['/home','2','amigos','hueco']">
+      Home Parametros
+    </a>
+  </li>
+</ul>
+
+<pre>
+  {{color}}
+</pre>
+<div [style.background-color]="color">
+  <h1 (mouseover)="color='red'">El huevo</h1>
+</div>
+<h2 (mouseover)="color='green'">Verde</h2>
+<h2 (mouseover)="color='yellow'">Amarillo</h2>
+
+<button (click)="crearSebas()">CrearSebas</button>
+<p>{{nuevoArtista.nombre}}</p>
+<input type="text" [(ngModel)]="nuevoArtista.nombre">
+<p>{{nuevoArtista.paisResidencia}}</p>
+<input type="text" [(ngModel)]="nuevoArtista.paisResidencia">
+<p>{{nuevoArtista.estilo}}</p>
+<input type="text" [(ngModel)]="nuevoArtista.estilo">
+<button (click)="crearArtista()">Crear Nuevo Artista</button>
+
+<div *ngFor="let artista of artistas">
+  <h3>{{artista.nombre}}</h3>
+  <h2>{{artista.paisResidencia}}</h2>
+  <p>{{artista.estilo}}</p>
+  <a [routerLink]="['/home',artista.id,'amigos','hueco']">
+    Ir a artista
+  </a>
+</div>
+
+<h1>Empieza la vista hijue putas</h1>
+<router-outlet></router-outlet>
+<h1>Termina la vista hijue putas</h1>
